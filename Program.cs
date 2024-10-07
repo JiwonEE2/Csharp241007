@@ -22,7 +22,7 @@
             string str3 = string.Format("경일 : {0},{1},{2}", "호호", 1234, num);
             Console.WriteLine(str3);
 
-            // 3. 문자열 보간을 이용한 방법
+            // 4. 문자열 보간을 이용한 방법
             // format 방식과 달리 string 안에 직접 변수 이름을 넣는다.
             int a = 10;
             int b = 10;
