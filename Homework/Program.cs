@@ -19,9 +19,47 @@ namespace Homework
 {
     internal class Program
     {
+        static void Homework1()
+        {
+            int[] scores = new int[5];
+            int sum = 0;
+            for (int i = 0; i < scores.Length; i++)
+            {
+                scores[i] = int.Parse(Console.ReadLine());
+                sum += scores[i];
+            }
+            // 정렬함수
+            Array.Sort(scores);
+            Console.WriteLine($"최대값 : {scores.Max()}");
+            Console.WriteLine($"최소값 : {scores.Min()}");
+            Console.WriteLine($"평균 : {sum / scores.Length}");
+            Console.Write("오름차순 정렬 : ");
+            for(int i = 0; i < scores.Length; i++)
+            {
+                Console.Write($"{scores[i]} ");
+
+            }
+        }
+        static void Homework2()
+        {
+
+        }
+        static void Homework3()
+        {
+            // 문장 입력 받기
+            string sentence = Console.ReadLine();
+            // 띄어쓰기로 쪼개기
+            string[] words = sentence.Split(' ');
+            string[] newWords= new string[words.Length];
+            for(int i = 0;i < words.Length;i++)
+            {
+                for(int j= 0;j<
+                char newWords[i] = (char)words[i];
+            }
+        }
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Homework1();
         }
     }
 }
