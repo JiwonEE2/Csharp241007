@@ -15,51 +15,62 @@
 출력예시)dcba hgfe
 */
 
+using System.Runtime.InteropServices;
+
 namespace Homework
 {
-    internal class Program
-    {
-        static void Homework1()
-        {
-            int[] scores = new int[5];
-            int sum = 0;
-            for (int i = 0; i < scores.Length; i++)
-            {
-                scores[i] = int.Parse(Console.ReadLine());
-                sum += scores[i];
-            }
-            // 정렬함수
-            Array.Sort(scores);
-            Console.WriteLine($"최대값 : {scores.Max()}");
-            Console.WriteLine($"최소값 : {scores.Min()}");
-            Console.WriteLine($"평균 : {sum / scores.Length}");
-            Console.Write("오름차순 정렬 : ");
-            for(int i = 0; i < scores.Length; i++)
-            {
-                Console.Write($"{scores[i]} ");
+	internal class Program
+	{
+		static void Homework1()
+		{
+			int[] scores = new int[5];
+			int sum = 0;
+			for (int i = 0; i < scores.Length; i++)
+			{
+				scores[i] = int.Parse(Console.ReadLine());
+				sum += scores[i];
+			}
+			// 정렬함수
+			Array.Sort(scores);
+			Console.WriteLine($"최대값 : {scores.Max()}");
+			Console.WriteLine($"최소값 : {scores.Min()}");
+			Console.WriteLine($"평균 : {sum / scores.Length}");
+			Console.Write("오름차순 정렬 : ");
+			for (int i = 0; i < scores.Length; i++)
+			{
+				Console.Write($"{scores[i]} ");
 
-            }
-        }
-        static void Homework2()
-        {
+			}
+		}
+		static void Homework2()
+		{
 
-        }
-        static void Homework3()
-        {
-            // 문장 입력 받기
-            string sentence = Console.ReadLine();
-            // 띄어쓰기로 쪼개기
-            string[] words = sentence.Split(' ');
-            string[] newWords= new string[words.Length];
-            for(int i = 0;i < words.Length;i++)
-            {
-                for(int j= 0;j<
-                char newWords[i] = (char)words[i];
-            }
-        }
-        static void Main(string[] args)
-        {
-            Homework1();
-        }
-    }
+		}
+		static void Homework3()
+		{
+			// 문장 입력 받기
+			// sentence = "abcd efgh"
+			string sentence = Console.ReadLine();
+			// 띄어쓰기로(단어단위로) 쪼개기
+			// words[0] = "abcd", words[1] = "efgh"
+			string[] words = sentence.Split(' ');
+			// 단어 개수만큼 반복
+			// words[0], words[1]을 char형으로 변경하고, 뒤집기
+			string[] newWords = new string[words.Length];
+			for (int i = 0; i < words.Length; i++)
+			{
+				// words[i]를 char형으로 변경
+				char[] chars = words[i].ToCharArray();
+				// 뒤집기
+				Array.Reverse(chars);
+				newWords[i] = chars.ToString();
+				Console.Write(chars);
+				Console.Write(' ');
+			}
+		}
+		static void Main(string[] args)
+		{
+			Homework3();
+		}
+	}
 }
